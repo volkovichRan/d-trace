@@ -1,0 +1,34 @@
+1) dynamic instrumentation
+	Perfomance will alwayes take a hit with static instrumentation even when probes are disabled. 
+	When dtrace is not in use there is abosluelty no effect on the system
+
+2) unified instrumentation
+	Beyond requring diffrent tools for difrrent aspects of the operating system, 
+	earlier approaches also required diffrent tools for the operatitng system
+
+3) arbitrary-context kernel instrumentation
+	Dtrace can instrument virtually all of the kernel including delicate subsystems such as scheduler and synchoronization facilites
+
+4) data intergirty
+	Dtrace reports any errors that prevent trace data from being recorded
+
+5) arbitrary actions 
+	Becouse its dynamic the actions taken by Dtrace at any given point of instrumentation are not defined or limited 
+
+6) safety
+    Dtrace guarantess abslute safety of user defiend actions: Runtime errros suck as illegal memory accesses are caught and reported.
+    In addition to runtime checking of used defiend actions Dtrace inclueds a watchdog timer verifying that the target system is 
+    reasonalby alive and responsive
+
+7) predicates 
+	A logical predicate mechanism allows actions to be taken only when user specified conditions are met.
+
+8) Speculative tracing
+	Dtrace has mechanism for speculatively tracing data deferring the decision to commit or discrad the data to a later time
+
+9) Heterogenous instrumentation
+	Dtrace is extensible to new insturmenatation problems and their solutions. in Dtrace the instrumenatiton provirers are formally separated from the probe processing framework by a well defeind api allowing new dynamic instrumentation to plug in and use the common framework
+
+10) Virtualized consumers
+	Everything about Dtrace os birtualized per consumer, multiple consumer can enbale the same proble in diffrent ways 
+	there is not limit on the number of concurrent consumers
