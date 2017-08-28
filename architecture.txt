@@ -1,0 +1,8 @@
+The Dtrace consumers execute in user mode and use the libdtrace.so library. 
+When a D program is executed the program is complied into byte code. 
+The actual code is validated for safety and executed in the kernel in a virtual machin-like 
+enviroment that is part of the kernel. 
+dtrace framework includes an emulated cpu suppriting an risc instruction set.
+The internal implementation includes interfaces between the kernel framework and the providers.
+when the D program teminates the providers disable the probes, restoring all 
+the insturmented code paths to their original states.
